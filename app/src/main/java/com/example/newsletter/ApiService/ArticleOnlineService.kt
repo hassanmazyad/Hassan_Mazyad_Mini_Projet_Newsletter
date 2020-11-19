@@ -7,6 +7,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import com.example.newsletter.data.Article
+import com.example.newsletter.data.ArticleResponse
 
 class ArticleOnlineService : ArticleService {
     private val service: RetrofitApiService
@@ -64,8 +65,8 @@ class ArticleOnlineService : ArticleService {
         })
     }
 
-    override fun getArticles(): List<Article> {
-        return service.list().execute().body()?.articles ?: listOf()
+    override fun getArticles(category: String): retrofit2.Response<ArticleResponse> {
+        return service.list(category).execute()
     }
 
 
