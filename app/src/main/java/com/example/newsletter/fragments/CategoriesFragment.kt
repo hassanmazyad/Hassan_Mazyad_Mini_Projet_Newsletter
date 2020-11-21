@@ -20,6 +20,15 @@ import com.example.newsletter.data.Category
  */
 class CategoriesFragment : Fragment(), CallBack {
     lateinit var recyclerView: RecyclerView
+    private lateinit var categoryName: String
+
+    companion object {
+        fun newInstance(categoryName: String): CategoriesFragment {
+            return CategoriesFragment().apply {
+                this.categoryName = categoryName
+            }
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

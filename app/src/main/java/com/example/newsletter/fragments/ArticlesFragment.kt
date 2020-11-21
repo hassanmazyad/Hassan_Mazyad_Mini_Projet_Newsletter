@@ -51,7 +51,7 @@ class ArticleFragment : Fragment(), CoroutineScope {
         super.onViewCreated(view, savedInstanceState)
         launch {
             val loaderData = async(Dispatchers.IO) {
-                articleData = repository.list(category)
+                articleData = repository.listByCategory(category)
             }
             view.findViewById<TextView>(R.id.category_title).text = category
             recyclerView = view.findViewById(R.id.recycler_view)

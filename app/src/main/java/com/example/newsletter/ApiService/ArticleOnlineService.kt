@@ -64,9 +64,19 @@ class ArticleOnlineService : ArticleService {
         })
     }
 
-    override fun getArticles(category: String): retrofit2.Response<ArticleResponse> {
-        return service.list(category).execute()
+    override fun getArticlesByCategory(category: String): retrofit2.Response<ArticleResponse> {
+        return service.listByCategory(category).execute()
     }
+
+    override fun getArticlesByEditor(editor: String): retrofit2.Response<ArticleResponse> {
+        return service.listByEditor(editor).execute()
+    }
+
+    override fun getArticlesByCountry(country: String): retrofit2.Response<ArticleResponse> {
+        return service.listByCountry(country).execute()
+    }
+
+
 
 
     companion object {

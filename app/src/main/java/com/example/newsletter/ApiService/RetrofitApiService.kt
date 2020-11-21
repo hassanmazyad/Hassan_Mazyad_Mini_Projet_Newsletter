@@ -11,6 +11,7 @@ interface RetrofitApiService {
     // everything est l'action du web service qu'on veut apeler
     // Elle sera concaténée avec l'url prédéfini dans retrofit
     @GET("everything?apiKey=34ff6b016d3740f2bfa3863fde56c1a4")
-    fun list(@Query("q") category: String): Call<ArticleResponse>
-
+    fun listByCategory(@Query("q") category: String): Call<ArticleResponse>
+    fun listByEditor(@Query("q") name: String): Call<ArticleResponse>
+    fun listByCountry(@Query("q") country: String): Call<ArticleResponse>
 }

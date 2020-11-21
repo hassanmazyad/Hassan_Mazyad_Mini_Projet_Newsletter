@@ -3,7 +3,7 @@ package com.example.newsletter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import com.example.newsletter.fragments.CategoriesFragment
+import com.example.newsletter.fragments.AccueilFragment
 
 
 class MainActivity : AppCompatActivity() {
@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        changeFragment(CategoriesFragment())
+        changeFragment(AccueilFragment())
     }
 
     fun changeFragment(fragment: Fragment) {
