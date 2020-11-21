@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.newsletter.R
 import com.example.newsletter.data.Article
+import java.time.format.DateTimeFormatter
+import java.time.format.FormatStyle
 
 class ArticleAdapter(private val dataset: List<Article>) :
     RecyclerView.Adapter<ArticleAdapter.ViewHolder>() {
@@ -15,8 +17,21 @@ class ArticleAdapter(private val dataset: List<Article>) :
         fun bind(item: Article) {
             val txtTitle = root.findViewById<TextView>(R.id.title)
             val img = root.findViewById<AppCompatImageView>(R.id.image)
+            val txauthor = root.findViewById<TextView>(R.id.author)
+            val txcontent = root.findViewById<TextView>(R.id.content)
+            val datepublishedAt =  root.findViewById<TextView>(R.id.publishedAt)
+
+
+
+
+
+
+
             txtTitle.text = item.title
             Glide.with(root).load(item.urlToImage).into(img)
+            txauthor.text = item.author
+            datepublishedAt.text = item.publishedAt.toString()
+            txcontent.text = item.content
         }
     }
 

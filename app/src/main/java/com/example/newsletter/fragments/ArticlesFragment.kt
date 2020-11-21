@@ -12,6 +12,7 @@ import com.example.newsletter.R
 import com.example.newsletter.adapters.ArticleAdapter
 import com.example.newsletter.repositories.ArticleRepository
 import com.example.newsletter.data.Article
+import com.example.newsletter.data.Section
 import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
 
@@ -56,6 +57,9 @@ class ArticleFragment : Fragment(), CoroutineScope {
             view.findViewById<TextView>(R.id.category_title).text = category
             recyclerView = view.findViewById(R.id.recycler_view)
             loaderData.await()
+
+
+
             val adapterRecycler = ArticleAdapter(articleData)
             recyclerView.layoutManager = LinearLayoutManager(view.context)
             recyclerView.adapter = adapterRecycler
