@@ -33,9 +33,9 @@ class AccueilFragment : Fragment(), CallBack {
         super.onViewCreated(view, savedInstanceState)
         recyclerView = view.findViewById(R.id.recycler_view)
         val sections = listOf<Section>(
-            Section("Categories", "https://previews.123rf.com/images/vectorikart/vectorikart1401/vectorikart140100009/25097410-ensemble-d-ic%C3%B4nes-d-%C3%A9ducation-plats-de-diff%C3%A9rents-sujets-et-concepts.jpg"),
+            Section("Categories", "https://studyclix.blob.core.windows.net/static/content/file/blogs/7/7b3d764f-5ab1-44f7-83b3-313cfb266e7d.png"),
             Section("Editors", "https://previews.123rf.com/images/georgidimitrov70/georgidimitrov701605/georgidimitrov70160500013/55918552-major-journaux-internationaux-d%C3%A9tail-des-en-t%C3%AAtes.jpg"),
-            Section("Countries","https://i.ytimg.com/vi/c36MyeomWMs/maxresdefault.jpg")
+            Section("Countries","https://image.shutterstock.com/image-vector/vector-flags-all-countries-one-600w-257061943.jpg")
         )
 
         val adapterRecycler = AccueilAdapter(sections, this)
@@ -45,6 +45,14 @@ class AccueilFragment : Fragment(), CallBack {
     }
 
     override fun onClick(mySections: String) {
-        (activity as? MainActivity)?.changeFragment(CategoriesFragment.newInstance(mySections))
+        if (mySections=="Categories"){
+            (activity as? MainActivity)?.changeFragment(CategoriesFragment.newInstance(mySections))
+        }
+        else if (mySections=="Editors"){
+            (activity as? MainActivity)?.changeFragment(EditorsFragment.newInstance(mySections))
+        }
+        else if (mySections=="Countries"){
+            (activity as? MainActivity)?.changeFragment(CountriesFragment.newInstance(mySections))
+        }
     }
 }

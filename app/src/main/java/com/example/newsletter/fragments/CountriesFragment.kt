@@ -23,6 +23,16 @@ import com.example.newsletter.data.Country
 class CountriesFragment : Fragment(), CallBack {
     lateinit var recyclerView: RecyclerView
 
+    private lateinit var countryName: String
+
+    companion object {
+        fun newInstance(countryName: String): CountriesFragment {
+            return CountriesFragment().apply {
+                this.countryName = countryName
+            }
+        }
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -35,11 +45,11 @@ class CountriesFragment : Fragment(), CallBack {
         super.onViewCreated(view, savedInstanceState)
         recyclerView = view.findViewById(R.id.recycler_view)
         val countries = listOf<Country>(
-            Country("France", "https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg"),
-            Country("Chine", "https://images-na.ssl-images-amazon.com/images/I/21AdMPSfywL._AC_SX425_.jpg"),
-            Country("Etats Unis", "https://www.google.com/url?sa=i&url=https%3A%2F%2Fdrapeau.biz%2Famerique%2Fdrapeau-usa%2F&psig=AOvVaw0laRzNX4IIebOIvrmtYRvg&ust=1606068443167000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPjItqqdlO0CFQAAAAAdAAAAABAG"),
-            Country("Angleterre", "https://upload.wikimedia.org/wikipedia/commons/a/ae/Flag_of_the_United_Kingdom.svg"),
-            Country("Italie", "https://upload.wikimedia.org/wikipedia/commons/0/03/Flag_of_Italy.svg"),
+            Country("fr", "https://www.autocollants-stickers.com/resize/360x360/zc/3/f/0/src/sites/astickers/files/products/f59efdba4d35f58bb95339edcc5b0f10.png"),
+            Country("cn", "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Zeng_Liansong%27s_proposal_for_the_PRC_flag.svg/220px-Zeng_Liansong%27s_proposal_for_the_PRC_flag.svg.png"),
+            Country("us", "https://ambassadecabinetconseil.com/wp-content/uploads/2018/11/drapeau-etats-unis.jpg"),
+            Country("en", "https://i.pinimg.com/originals/ea/c0/8a/eac08a5f06624b78418a77364ff28fd5.jpg"),
+            Country("it", "https://images-na.ssl-images-amazon.com/images/I/2157-ZWADdL._AC_SX425_.jpg"),
         )
 
         val adapterRecycler = CountryAdapter(countries, this)
