@@ -1,6 +1,7 @@
 package com.example.newsletter.repositories
 import com.example.newsletter.ApiService.RetrofitApiService
 import com.example.newsletter.data.Article
+import com.example.newsletter.data.Country
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

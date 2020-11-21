@@ -6,7 +6,6 @@ import okhttp3.Response
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import com.example.newsletter.data.Article
 import com.example.newsletter.data.ArticleResponse
 
 class ArticleOnlineService : ArticleService {

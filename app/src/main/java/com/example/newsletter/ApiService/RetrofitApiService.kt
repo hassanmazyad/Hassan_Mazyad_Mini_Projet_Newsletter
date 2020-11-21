@@ -1,3 +1,4 @@
+
 package com.example.newsletter.ApiService
 
 import retrofit2.Call
@@ -12,6 +13,4 @@ interface RetrofitApiService {
     @GET("everything?apiKey=34ff6b016d3740f2bfa3863fde56c1a4")
     fun list(@Query("q") category: String): Call<ArticleResponse>
 
-
 }
-
