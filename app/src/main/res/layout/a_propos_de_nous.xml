@@ -9,11 +9,10 @@
         android:id="@+id/aProposDeNous"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:text="À propos de nous"
+        android:text="À propos de nous :"
         android:textSize="20dp"
         android:textStyle="bold"
-        android:textColor="@color/black"
+        android:textColor="@color/purple_700"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="parent" />
@@ -22,8 +21,9 @@
         android:id="@+id/noms_prenoms"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:text="Hassan Mazyad"
+        android:text="
+        Développé par Hassan Mazyad
+        "
         android:textSize="20dp"
         android:textStyle="bold"
         android:textColor="@color/black"
@@ -33,45 +33,91 @@
     <ImageView
         android:id="@+id/photo"
         android:textAlignment="center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/me"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/noms_prenoms"/>
 
     <TextView
-        android:id="@+id/lien_vers_git"
-        android:textAlignment="center"
+        android:id="@+id/lien_du_projet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"
-        android:text="Lien du projet : https://github.com/hassanmazyad/Hassan_Mazyad_Mini_Projet_Newsletter.git"
+        android:text="Lien du projet :"
         android:textStyle="bold"
-        android:textColor="@color/black"
+        android:textColor="@color/purple_700"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/photo"/>
 
     <TextView
-        android:id="@+id/librairies"
-        android:textAlignment="center"
+        android:id="@+id/lien_vers_git"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="
+        https://github.com/hassanmazyad/Hassan_Mazyad_Mini_Projet_Newsletter.git
+        "
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lien_du_projet"/>
+
+    <TextView
+        android:id="@+id/librairie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"
         android:textStyle="bold"
         android:text="La liste des librairies externes utilisées dans l'applications : "
-        android:textColor="@color/black"
+        android:textColor="@color/purple_700"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lien_vers_git"/>
 
     <TextView
-        android:id="@+id/fonctionnalities"
-        android:textAlignment="center"
+        android:id="@+id/librairies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:text="
+        Pas des librairies externes \n
+        "
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/librairie"/>
+
+
+
+    <TextView
+        android:id="@+id/fonctionnalitie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"
         android:textStyle="bold"
         android:text="La liste des fonctionnalités de l'application : "
+        android:textColor="@color/purple_700"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/librairies"/>
+
+    <TextView
+        android:id="@+id/fonctionnalities"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:text="
+        1) Page d'accueil de l'application \n
+        2) Liste des articles par catégorie \n
+        3) Gestion des favoris \n
+        4) Détail d'un article \n
+        5) Vue à propos de nous
+        "
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fonctionnalitie"/>
+
+
 
 
 </android.support.constraint.ConstraintLayout>

@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.newsletter.MainActivity
@@ -20,7 +21,7 @@ import com.example.newsletter.data.Section
  */
 class AccueilFragment : Fragment(), CallBack {
     lateinit var recyclerView: RecyclerView
-    lateinit var myButton: RecyclerView
+    lateinit var myButton: Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,6 +34,8 @@ class AccueilFragment : Fragment(), CallBack {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         recyclerView = view.findViewById(R.id.recycler_view)
+        myButton = view.findViewById(R.id.aProposDeNous)
+
 
         val sections = listOf<Section>(
             Section("Categories", "https://studyclix.blob.core.windows.net/static/content/file/blogs/7/7b3d764f-5ab1-44f7-83b3-313cfb266e7d.png"),
@@ -40,6 +43,9 @@ class AccueilFragment : Fragment(), CallBack {
             Section("Countries","https://image.shutterstock.com/image-vector/vector-flags-all-countries-one-600w-257061943.jpg")
         )
 
+        myButton.setOnClickListener(){
+            (activity as? MainActivity)?.changeFragment(AProposDeNous())
+        }
 
         val adapterRecycler = AccueilAdapter(sections,this)
         recyclerView.layoutManager = LinearLayoutManager(view.context)
