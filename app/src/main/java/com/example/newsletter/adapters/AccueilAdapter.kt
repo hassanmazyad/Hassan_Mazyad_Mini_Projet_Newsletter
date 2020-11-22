@@ -3,9 +3,11 @@ package com.example.newsletter.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.newsletter.MainActivity
 import com.example.newsletter.R
 import com.example.newsletter.data.Category
 import com.example.newsletter.data.Section
@@ -16,11 +18,16 @@ class AccueilAdapter(private val dataset: List<Section>, private val callback: C
         fun bind(item: Section) {
             val txtTitle = root.findViewById<TextView>(R.id.title)
             val img = root.findViewById<androidx.appcompat.widget.AppCompatImageView>(R.id.image)
+
+            val myButton = root.findViewById<Button>(R.id.aProposDeNous)
+
             txtTitle.text = item.name
             Glide.with(root).load(item.image).into(img)
+
             root.setOnClickListener {
                 callback.onClick(item.name)
             }
+
         }
     }
 

@@ -21,12 +21,6 @@ class ArticleAdapter(private val dataset: List<Article>) :
             val txcontent = root.findViewById<TextView>(R.id.content)
             val datepublishedAt =  root.findViewById<TextView>(R.id.publishedAt)
 
-
-
-
-
-
-
             txtTitle.text = item.title
             Glide.with(root).load(item.urlToImage).into(img)
             txauthor.text = item.author
