@@ -35,6 +35,7 @@ class CategoriesAdapter(private val dataset: List<Category>, private val callbac
 
     override fun getItemCount(): Int = dataset.size
 }
+
 interface CallBack {
     fun onClick(categoryName: String)
 }

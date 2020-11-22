@@ -5,17 +5,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.newsletter.MainActivity
 import com.example.newsletter.R
 import com.example.newsletter.adapters.ArticleAdapter
 import com.example.newsletter.repositories.ArticleRepository
 import com.example.newsletter.data.Article
-import com.example.newsletter.data.Section
 import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
-
+import com.example.newsletter.adapters.CallBack
 
 /**
  * A simple [Fragment] subclass.
@@ -24,10 +25,12 @@ import kotlin.coroutines.CoroutineContext
  */
 class ArticleFragment : Fragment(), CoroutineScope {
     lateinit var recyclerView: RecyclerView
+
     private lateinit var category: String
     private val repository = ArticleRepository()
     private lateinit var articleData: List<Article>
     private var job: Job = Job()
+
 
     companion object {
         fun newInstance(categoryName: String): ArticleFragment {
@@ -58,11 +61,12 @@ class ArticleFragment : Fragment(), CoroutineScope {
             recyclerView = view.findViewById(R.id.recycler_view)
             loaderData.await()
 
-
-
             val adapterRecycler = ArticleAdapter(articleData)
             recyclerView.layoutManager = LinearLayoutManager(view.context)
             recyclerView.adapter = adapterRecycler
         }
     }
+
+
+
 }

@@ -10,9 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.newsletter.MainActivity
 import com.example.newsletter.R
 import com.example.newsletter.adapters.CallBack
-import com.example.newsletter.adapters.CategoriesAdapter
 import com.example.newsletter.adapters.CountryAdapter
-import com.example.newsletter.data.Category
 import com.example.newsletter.data.Country
 
 /**

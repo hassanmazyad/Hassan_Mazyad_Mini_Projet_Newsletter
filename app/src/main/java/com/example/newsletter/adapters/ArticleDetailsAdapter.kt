@@ -6,16 +6,13 @@ import android.widget.TextView
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.newsletter.MainActivity
 import com.example.newsletter.R
 import com.example.newsletter.data.Article
-import com.example.newsletter.fragments.ArticleDetailsFragment
-import kotlinx.coroutines.CoroutineScope
-import kotlin.coroutines.CoroutineContext
+import java.time.format.DateTimeFormatter
+import java.time.format.FormatStyle
 
-
-class ArticleAdapter(private val dataset: List<Article>) :
-    RecyclerView.Adapter<ArticleAdapter.ViewHolder>() {
+class ArticleDetailsAdapter(private val article: Article  , private val callback: CallBack) :
+    RecyclerView.Adapter<ArticleDetailsAdapter.ViewHolder>() {
     inner class ViewHolder(private val root: View) : RecyclerView.ViewHolder(root) {
         fun bind(item: Article) {
             val txtTitle = root.findViewById<TextView>(R.id.title)
@@ -23,26 +20,32 @@ class ArticleAdapter(private val dataset: List<Article>) :
             val txauthor = root.findViewById<TextView>(R.id.author)
             val txcontent = root.findViewById<TextView>(R.id.content)
             val datepublishedAt =  root.findViewById<TextView>(R.id.publishedAt)
+            val txdescription = root.findViewById<TextView>(R.id.description)
+            val txurl = root.findViewById<TextView>(R.id.url)
 
             txtTitle.text = item.title
             Glide.with(root).load(item.urlToImage).into(img)
             txauthor.text = item.author
-            datepublishedAt.text = item.publishedAt.toString()
             txcontent.text = item.content
+            datepublishedAt.text = item.publishedAt.toString()
+            txdescription.text = item.description
+            txurl.text = item.url
 
+            root.setOnClickListener {
+                callback.onClick(item.title)
+            }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val rootView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.list_item_categorie, parent, false)
+            .inflate(R.layout.fragment_articledetails, parent, false)
         return ViewHolder(rootView)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(dataset[position])
+    override fun onBindViewHolder(holder: ArticleDetailsAdapter.ViewHolder, position: Int) {
+        holder.bind(article)
     }
 
-    override fun getItemCount(): Int = dataset.size
+    override fun getItemCount(): Int = 1
 }
-
