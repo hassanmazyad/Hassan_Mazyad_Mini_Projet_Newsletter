@@ -87,11 +87,11 @@
         />
 
     <Button
-        android:id="@+id/open"
+        android:id="@+id/favorite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:drawableLeft="@drawable/ic_baseline_call_made_24"
-        app:layout_constraintStart_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/url"
+        android:drawableLeft="@drawable/ic_baseline_favorite_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/url"
         />
 </android.support.constraint.ConstraintLayout>
