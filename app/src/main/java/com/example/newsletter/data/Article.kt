@@ -1,8 +1,10 @@
 package com.example.newsletter.data
 
+import androidx.room.Entity
 import java.io.Serializable
 import java.util.*
 
+@Entity
 data class Article(
     val source: Source,
     val author: String,
