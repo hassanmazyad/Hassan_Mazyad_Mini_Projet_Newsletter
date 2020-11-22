@@ -35,7 +35,7 @@ class ArticleAdapter(private val dataset: List<Article>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val rootView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.list_item_categorie, parent, false)
+            .inflate(R.layout.list_item_articles, parent, false)
         return ViewHolder(rootView)
     }
 
