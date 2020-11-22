@@ -19,12 +19,18 @@ import com.example.newsletter.data.Article
 class FavoriteFragment : Fragment() {
     lateinit var recyclerView: RecyclerView
 
+    companion object {
+        fun newInstance(favorite: String): FavoriteFragment {
+            return FavoriteFragment().apply {}
+        }
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_articles, container, false)
+        return inflater.inflate(R.layout.fragment_favorits, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

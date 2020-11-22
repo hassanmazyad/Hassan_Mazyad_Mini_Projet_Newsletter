@@ -48,6 +48,7 @@ class CountriesFragment : Fragment(), CallBack {
             Country("us", "https://ambassadecabinetconseil.com/wp-content/uploads/2018/11/drapeau-etats-unis.jpg"),
             Country("en", "https://i.pinimg.com/originals/ea/c0/8a/eac08a5f06624b78418a77364ff28fd5.jpg"),
             Country("it", "https://images-na.ssl-images-amazon.com/images/I/2157-ZWADdL._AC_SX425_.jpg"),
+            Country("de", "https://b-k.lu/wp-content/uploads/2016/05/DrAll-Allemagne-Bernard-Kauffman-1200x803.jpg"),
         )
 
         val adapterRecycler = CountryAdapter(countries, this)

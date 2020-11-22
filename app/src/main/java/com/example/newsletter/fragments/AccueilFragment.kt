@@ -22,6 +22,7 @@ import com.example.newsletter.data.Section
 class AccueilFragment : Fragment(), CallBack {
     lateinit var recyclerView: RecyclerView
     lateinit var myButton: Button
+    lateinit var myFavButton: Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,7 +36,7 @@ class AccueilFragment : Fragment(), CallBack {
         super.onViewCreated(view, savedInstanceState)
         recyclerView = view.findViewById(R.id.recycler_view)
         myButton = view.findViewById(R.id.aProposDeNous)
-
+        myFavButton = view.findViewById(R.id.liste_favorites)
 
         val sections = listOf<Section>(
             Section("Categories", "https://studyclix.blob.core.windows.net/static/content/file/blogs/7/7b3d764f-5ab1-44f7-83b3-313cfb266e7d.png"),
@@ -45,6 +46,10 @@ class AccueilFragment : Fragment(), CallBack {
 
         myButton.setOnClickListener(){
             (activity as? MainActivity)?.changeFragment(AProposDeNous())
+        }
+
+        myFavButton.setOnClickListener(){
+            (activity as? MainActivity)?.changeFragment(FavoriteFragment())
         }
 
         val adapterRecycler = AccueilAdapter(sections,this)
